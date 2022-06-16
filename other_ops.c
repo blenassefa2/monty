@@ -32,8 +32,8 @@ void _pchar(stack_t **head, unsigned int line_number)
  */
 void _pstr(stack_t **head, unsigned int line_number)
 {
-	(void) line_number;
 	stack_t *str;
+	(void) line_number;
 
 	if (head == NULL || *head == NULL || variable.value == 0)
 	{
@@ -59,8 +59,8 @@ void _pstr(stack_t **head, unsigned int line_number)
  */
 void _rotl(stack_t **head, unsigned int line_number)
 {
-	(void) line_number;
 	stack_t *temp;
+	(void) line_number;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return;
@@ -83,8 +83,8 @@ void _rotl(stack_t **head, unsigned int line_number)
  */
 void _rotr(stack_t **head, unsigned int line_number)
 {
-	(void) line_number;
 	stack_t *temp;
+	(void) line_number;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 		return;
