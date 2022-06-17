@@ -65,7 +65,7 @@ void execute(char *input, stack_t **stack, unsigned int line)
 		}
 		if (value == 3)
 		{
-			printf("L%d: unknown instruction %s\n", line, token);
+			dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", line, token);
 			if (stack)
 				while (stack)
 					pop(stack, line);
