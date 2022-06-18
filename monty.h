@@ -5,8 +5,7 @@
 #define _POSIX_C_SOURCE  200809L
 #define _GNU_SOURCE
 
-extern int val;
-
+extern int val = 0;
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>

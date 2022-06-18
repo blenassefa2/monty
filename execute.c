@@ -1,6 +1,5 @@
 #include "monty.h"
 
-int val = 0;
 /**
  * check_digit - checks if imput is digit
  * @val: input
