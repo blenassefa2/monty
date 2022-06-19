@@ -1,20 +1,19 @@
 #include "monty.h"
 
 /**
- * main - entry to monty
+ * main - entry into interpreter
  * @argc: argc counter
- * @argv: array of arguments
- *
+ * @argv: argument vector
  * Return: 0 on success
  */
-
 int main(int argc, char *argv[])
 {
 	FILE *fp = NULL;
 	char *buffer = NULL, *str = NULL;
 	size_t s = 0;
-	unsigned int line = 1;
+	unsigned int line_number = 1;
 	stack_t *stack = NULL;
+
 
 	if (argc != 2)
 	{
@@ -25,23 +24,21 @@ int main(int argc, char *argv[])
 	fp = fopen(argv[1], "r");
 	if (!fp)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't open this file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-
 	while (getline(&buffer, &s, fp) != -1)
 	{
 		if (*buffer != '\n')
 		{
 			str = strtok(buffer, "\n");
-			execute(str, &stack, line);
+			tokenizer(str, &stack, line_number);
 		}
-		line++;
+		line_number++;
 	}
 	fclose(fp);
 	free(buffer);
 	if (stack != NULL)
-		while (stack != NULL)
-			pop(&stack, line);
+		free_stack(&stack, line_number);
 	return (0);
 }
