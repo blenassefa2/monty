@@ -40,7 +40,7 @@ void execute_ops(stack_t **stack, unsigned int line_number, char *token)
 		i++;
 	}
 
-	printf("L%d: unknown instruction %s\n", line_number, token);
+	dprintf(STDERR_FILENO,"L%d: unknown instruction %s\n", line_number, token);
 	free_stack(stack, line_number);
 	exit(EXIT_FAILURE);
 }
