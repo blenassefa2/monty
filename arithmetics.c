@@ -38,7 +38,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-		printf("L%d: can't sub, stack too short\n", line_number);
+		dprintf(STDERR_FILENO, "L%d: can't sub, stack too short\n", line_number);
 		free_stack(stack, line_number);
 		exit(EXIT_FAILURE);
 	}
@@ -130,7 +130,7 @@ void _mod(stack_t **stack, unsigned int line_number)
 	}
 	if (variable.value == 0)
 	{
-		printf("L%d: division by zero\n", line_number);
+		dprintf(STDERR_FILENO, "L%d: division by zero\n", line_number);
 		free_stack(stack, line_number);
 		exit(EXIT_FAILURE);
 	}
